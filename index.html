@@ -1,60 +1,41 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 8</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-<body>
-
-  <h1>How Visualization Shapes Our Understanding of Data</h1>
-
-  <section>
-    <h2>White Hat: Women's Access to Higher Education</h2>
-
-    <p>
-      This visualization compares female and male tertiary
-      school enrollment rates over time. Both genders are
-      displayed using the same scale to provide an accurate
-      comparison.
-    </p>
-
-    <div id="whiteHatViz" class="viz-container"></div>
-  </section>
-
-  <section>
-    <h2>Black Hat: The Growing Education Crisis for Women</h2>
-
-    <p>
-      This visualization uses selective data and a narrowed
-      vertical axis to make the gender gap appear larger.
-      Its presentation demonstrates how design choices can
-      influence the interpretation of otherwise real data.
-    </p>
-
-    <div id="blackHatViz" class="viz-container"></div>
-  </section>
-
-  <script type="module" src="script.js"></script>
-
-</body>
-</html>
-
-Generative AI was used heavily in the making of this code, from Copilot -->
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>White Hat vs. Black Hat Visualization</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Inequality in Higher Education</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <script type="module" src="script.js"></script>
+    <main class="container">
+        <header>
+            <h1>Gender Inequality in Higher Education</h1>
+            <p class="subtitle">Two perspectives on tertiary-school enrollment in 2018</p>
+        </header>
+
+        <section class="chart-card">
+            <h2>White Hat</h2>
+            <p id="white-method" class="method"></p>
+            <div id="vis"></div>
+        </section>
+
+        <section class="chart-card">
+            <h2>Black Hat</h2>
+            <p id="black-method" class="method"></p>
+            <div id="vis2"></div>
+        </section>
+
+        <section class="documentation">
+            <h2>Reflection</h2>
+
+            <p>The white hat chart gives a more accurate view. It starts its y-axis at zero, shows countries where female enrollment is higher and countries where male enrollment is higher, and identifies 2018 as the comparison year. It also uses readable labels, a clear legend, and a random but representative selection of 24 countries with paired observations. Side by side bars make direct comparison easier. The bar lengths show the female and male gross tertiary enrollment values. The black hat chart is intentionally misleading. It is for an education example, not a valid conclusion about global gender equality. It shows only Liechtenstein, South Korea, San Marino, Turkey, Iran, and Morocco. Each listed country has female enrollment above 25 percent and below male enrollment. It leaves out countries that show the opposite pattern. Its y-axis starts at 25 percent instead of zero. This makes the differences look larger than they really are. The title, “Persistent Male Advantage in Tertiary Enrollment,” sounds like a research finding. It suggests a  pattern larger than the six country sample supports. This bias happens through country selection, scale, and framing. The numerical values were not changed. The data comes from the World Bank Gender Equality dataset stored locally in data/gender.csv. The comparison uses country names, 2018, and the female and male school enrollment, tertiary percent gross indicators. The assignment development process was completed entirely by myself with assistance from Copilot. Using the gender dataset, I first found a representative subset of countries, and then a biased subset which only included countries with the desired pattern. Copilot helped with making the grouped bar chart and with iterative edits, like changing the starting value of the y-axis and the colors of the bars themselves. Additionally, Copilot helped with creating the tooltips and legend to make the chart more professional.</p>
+        </section>
+    </main>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
